@@ -1,0 +1,9 @@
+[submodule "llvm"]
+	path = llvm
+	url = https://github.com/llvm-mirror/llvm
+[submodule "polly"]
+	path = polly
+	url = https://github.com/llvm-mirror/polly
+[submodule "clang"]
+	path = clang
+	url = https://github.com/llvm-mirror/clang
