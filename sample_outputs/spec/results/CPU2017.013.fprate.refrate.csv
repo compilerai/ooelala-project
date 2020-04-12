@@ -1,0 +1,548 @@
+valid,0
+
+"SPEC CPU2017 Floating Point Rate Result"
+
+"Full Results Table"
+
+Benchmark,"Base # Copies","Est. Base Run Time","Est. Base Rate","Base Selected","Base Status","Peak # Copies","Est. Peak Run Time","Est. Peak Rate","Peak Selected","Peak Status",Description
+503.bwaves_r,1,--,--,0,CE,,,,,,"refrate(ref) iteration #1"
+503.bwaves_r,,,,,,,,,,,"refrate(ref) iteration #2"
+507.cactuBSSN_r,1,--,--,0,CE,,,,,,"refrate(ref) iteration #1"
+507.cactuBSSN_r,,,,,,,,,,,"refrate(ref) iteration #2"
+508.namd_r,1,318.713487,2.980734,1,S,,,,,,"refrate(ref) iteration #1"
+508.namd_r,1,318.571817,2.982059,0,S,,,,,,"refrate(ref) iteration #2"
+510.parest_r,1,--,--,0,CE,,,,,,"refrate(ref) iteration #1"
+510.parest_r,,,,,,,,,,,"refrate(ref) iteration #2"
+511.povray_r,1,541.873031,4.309128,0,S,,,,,,"refrate(ref) iteration #1"
+511.povray_r,1,544.015411,4.292158,1,S,,,,,,"refrate(ref) iteration #2"
+519.lbm_r,1,414.003319,2.545873,0,S,,,,,,"refrate(ref) iteration #1"
+519.lbm_r,1,415.005622,2.539725,1,S,,,,,,"refrate(ref) iteration #2"
+521.wrf_r,1,--,--,0,CE,,,,,,"refrate(ref) iteration #1"
+521.wrf_r,,,,,,,,,,,"refrate(ref) iteration #2"
+526.blender_r,1,--,--,0,CE,,,,,,"refrate(ref) iteration #1"
+526.blender_r,,,,,,,,,,,"refrate(ref) iteration #2"
+527.cam4_r,1,--,--,0,CE,,,,,,"refrate(ref) iteration #1"
+527.cam4_r,,,,,,,,,,,"refrate(ref) iteration #2"
+538.imagick_r,1,578.805869,4.296777,0,S,,,,,,"refrate(ref) iteration #1"
+538.imagick_r,1,581.841385,4.274361,1,S,,,,,,"refrate(ref) iteration #2"
+544.nab_r,1,422.114349,3.987071,1,S,,,,,,"refrate(ref) iteration #1"
+544.nab_r,1,421.377057,3.994048,0,S,,,,,,"refrate(ref) iteration #2"
+549.fotonik3d_r,1,--,--,0,CE,,,,,,"refrate(ref) iteration #1"
+549.fotonik3d_r,,,,,,,,,,,"refrate(ref) iteration #2"
+554.roms_r,1,--,--,0,CE,,,,,,"refrate(ref) iteration #1"
+554.roms_r,,,,,,,,,,,"refrate(ref) iteration #2"
+
+"Selected Results Table"
+
+Benchmark,"Base # Copies","Est. Base Run Time","Est. Base Rate","Base Selected","Base Status","Peak # Copies","Est. Peak Run Time","Est. Peak Rate","Peak Selected","Peak Status",Description
+503.bwaves_r,,,,,NR,,,,,NR
+507.cactuBSSN_r,,,,,NR,,,,,NR
+508.namd_r,1,318.713487,2.980734,1,S,,,,,NR,"SelectedIteration (base #1; peak NR)"
+510.parest_r,,,,,NR,,,,,NR
+511.povray_r,1,544.015411,4.292158,1,S,,,,,NR,"SelectedIteration (base #2; peak NR)"
+519.lbm_r,1,415.005622,2.539725,1,S,,,,,NR,"SelectedIteration (base #2; peak NR)"
+521.wrf_r,,,,,NR,,,,,NR
+526.blender_r,,,,,NR,,,,,NR
+527.cam4_r,,,,,NR,,,,,NR
+538.imagick_r,1,581.841385,4.274361,1,S,,,,,NR,"SelectedIteration (base #2; peak NR)"
+544.nab_r,1,422.114349,3.987071,1,S,,,,,NR,"SelectedIteration (base #1; peak NR)"
+549.fotonik3d_r,,,,,NR,,,,,NR
+554.roms_r,,,,,NR,,,,,NR
+
+SPECrate2017_fp_base,3.537221,,3.537221
+SPECrate2017_fp_peak,"Not Run",,,,,,,"Not Run"
+
+"Run number:",013.0
+"runcpu command:","/opt/spec/bin/harness/runcpu --configfile clang --action run --tune base --copies 1 --iterations 2 --noreportable --nopower --runmode rate --tune base --size refrate fprate"
+"output root:","not used"
+
+"Hardware Vendor:","My Corporation"
+"Hardware Model:",
+"Date tested:",Feb-2020
+"CPU2017 License:","nnn (Your SPEC license number)"
+"Test sponsor:","My Corporation"
+"Tested by:","My Corporation"
+"Hardware avail:",
+"Software avail:",
+
+
+HARDWARE
+
+"CPU Name","Intel Xeon E5-2676 v3"
+"  Max MHz."," "
+"  Nominal"," "
+Enabled," cores, 1 chip,  threads/core"
+Orderable," "
+"Cache L1"," "
+"  L2"," "
+"  L3"," "
+"  Other"," "
+Memory,"31.420 GB fixme: If using DDR4, the format is:"
+,"'N GB (N x N GB nRxn PC4-nnnnX-X)'"
+Storage,"497 GB  add more disk info here"
+Other," "
+
+SOFTWARE
+
+OS,"Ubuntu 16.04.6 LTS"
+,4.4.0-1101-aws
+Compiler,"C/C++: Version 8.0.0 of Clang, the"
+,"LLVM Compiler Infrastructure"
+,"Fortran: Version 4.8.2 of GCC, the"
+,"GNU Compiler Collection"
+,"DragonEgg: Version 3.5.2, the"
+,"LLVM Compiler Infrastructure"
+Parallel,No
+Firmware," "
+"File System",ext4
+"System State","Run level 5 (add definition here)"
+"Base Pointers",64-bit
+"Peak Pointers","Not Applicable"
+Other," "
+
+"Submit Notes"
+
+"The config file option 'submit' was used."
+
+"General Notes"
+
+"Environment variables set by runcpu before the start of the run:"
+"LD_LIBRARY_PATH = ""/opt/llvm/build/lib"""
+"LIBRARY_PATH = ""/opt/llvm/build/lib"""
+"PATH = ""/opt/llvm/build/bin:/opt/spec/bin:/home/ankush/bin:/home/ankush/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/intel/bin"""
+
+
+"Platform Notes"
+
+" Sysinfo program /opt/spec/bin/sysinfo"
+" Rev: r5974 of 2018-05-19 9bcde8f2999c33d61f64985e45859ea9"
+" running on ip-172-31-9-72 Fri Feb 28 11:43:44 2020"
+
+" SUT (System Under Test) info as seen by some common utilities."
+" For more information on this section, see"
+"    https://www.spec.org/cpu2017/Docs/config.html#sysinfo"
+
+" From /proc/cpuinfo"
+"    model name : Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz"
+"       1  ""physical id""s (chips)"
+"       8 ""processors"""
+"    cores, siblings (Caution: counting these is hw and system dependent. The following"
+"    excerpts from /proc/cpuinfo might not be reliable.  Use with caution.)"
+"       cpu cores : 8"
+"       siblings  : 8"
+"       physical 0: cores 0 1 2 3 4 5 6 7"
+
+" From lscpu:"
+"      Architecture:          x86_64"
+"      CPU op-mode(s):        32-bit, 64-bit"
+"      Byte Order:            Little Endian"
+"      CPU(s):                8"
+"      On-line CPU(s) list:   0-7"
+"      Thread(s) per core:    1"
+"      Core(s) per socket:    8"
+"      Socket(s):             1"
+"      NUMA node(s):          1"
+"      Vendor ID:             GenuineIntel"
+"      CPU family:            6"
+"      Model:                 63"
+"      Model name:            Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz"
+"      Stepping:              2"
+"      CPU MHz:               2400.054"
+"      BogoMIPS:              4800.10"
+"      Hypervisor vendor:     Xen"
+"      Virtualization type:   full"
+"      L1d cache:             32K"
+"      L1i cache:             32K"
+"      L2 cache:              256K"
+"      L3 cache:              30720K"
+"      NUMA node0 CPU(s):     0-7"
+"      Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov"
+"      pat pse36 clflush mmx fxsr sse sse2 ht syscall nx pdpe1gb rdtscp lm constant_tsc"
+"      rep_good nopl xtopology pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe"
+"      popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm"
+"      invpcid_single kaiser fsgsbase bmi1 avx2 smep bmi2 erms invpcid xsaveopt"
+
+" /proc/cpuinfo cache data"
+"    cache size : 30720 KB"
+
+" From numactl --hardware  WARNING: a numactl 'node' might or might not correspond to a"
+" physical chip."
+"   available: 1 nodes (0)"
+"   node 0 cpus: 0 1 2 3 4 5 6 7"
+"   node 0 size: 32174 MB"
+"   node 0 free: 11467 MB"
+"   node distances:"
+"   node   0"
+"     0:  10"
+
+" From /proc/meminfo"
+"    MemTotal:       32946352 kB"
+"    HugePages_Total:       0"
+"    Hugepagesize:       2048 kB"
+
+" /usr/bin/lsb_release -d"
+"    Ubuntu 16.04.6 LTS"
+
+" From /etc/*release* /etc/*version*"
+"    debian_version: stretch/sid"
+"    ec2_version: Ubuntu 16.04.6 LTS (Xenial Xerus)"
+"    os-release:"
+"       NAME=""Ubuntu"""
+"       VERSION=""16.04.6 LTS (Xenial Xerus)"""
+"       ID=ubuntu"
+"       ID_LIKE=debian"
+"       PRETTY_NAME=""Ubuntu 16.04.6 LTS"""
+"       VERSION_ID=""16.04"""
+"       HOME_URL=""http://www.ubuntu.com/"""
+"       SUPPORT_URL=""http://help.ubuntu.com/"""
+
+" uname -a:"
+"    Linux ip-172-31-9-72 4.4.0-1101-aws #112-Ubuntu SMP Thu Jan 9 11:27:02 UTC 2020 x86_64"
+"    x86_64 x86_64 GNU/Linux"
+
+" Kernel self-reported vulnerability status:"
+
+" CVE-2017-5754 (Meltdown):          Mitigation: PTI"
+" CVE-2017-5753 (Spectre variant 1): Mitigation: usercopy/swapgs barriers and __user"
+" pointer sanitization"
+" CVE-2017-5715 (Spectre variant 2): Mitigation: Full generic retpoline, IBPB: kernel-off,"
+" STIBP: disabled, RSB filling"
+
+" run-level 5 Feb 28 03:13"
+
+" SPEC is set to: /opt/spec"
+"    Filesystem     Type  Size  Used Avail Use% Mounted on"
+"    /dev/xvda1     ext4  497G   19G  478G   4% /"
+
+" Additional information from dmidecode follows.  WARNING: Use caution when you interpret"
+" this section. The 'dmidecode' program reads system data which is ""intended to allow"
+" hardware to be accurately determined"", but the intent may not be met, as there are"
+" frequent changes to hardware, firmware, and the ""DMTF SMBIOS"" standard."
+
+" (End of data from sysinfo program)"
+
+"Compiler Version Notes"
+
+==============================================================================
+" CC  519.lbm_r(base) 538.imagick_r(base) 544.nab_r(base)
+"
+------------------------------------------------------------------------------
+"clang version 8.0.0 (tags/RELEASE_800/final)"
+"Target: x86_64-unknown-linux-gnu"
+"Thread model: posix"
+"InstalledDir: /opt/llvm/build/bin"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5.4.0"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/6"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/6.0.0"
+"Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5.4.0"
+"Candidate multilib: .;@m64"
+"Selected multilib: .;@m64"
+------------------------------------------------------------------------------
+
+==============================================================================
+" CXXC 508.namd_r(base)
+"
+------------------------------------------------------------------------------
+"clang version 8.0.0 (tags/RELEASE_800/final)"
+"Target: x86_64-unknown-linux-gnu"
+"Thread model: posix"
+"InstalledDir: /opt/llvm/build/bin"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5.4.0"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/6"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/6.0.0"
+"Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5.4.0"
+"Candidate multilib: .;@m64"
+"Selected multilib: .;@m64"
+------------------------------------------------------------------------------
+
+==============================================================================
+" CC  511.povray_r(base)
+"
+------------------------------------------------------------------------------
+"clang version 8.0.0 (tags/RELEASE_800/final)"
+"Target: x86_64-unknown-linux-gnu"
+"Thread model: posix"
+"InstalledDir: /opt/llvm/build/bin"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5.4.0"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/6"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/6.0.0"
+"Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5.4.0"
+"Candidate multilib: .;@m64"
+"Selected multilib: .;@m64"
+"clang version 8.0.0 (tags/RELEASE_800/final)"
+"Target: x86_64-unknown-linux-gnu"
+"Thread model: posix"
+"InstalledDir: /opt/llvm/build/bin"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5.4.0"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/6"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/6.0.0"
+"Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5.4.0"
+"Candidate multilib: .;@m64"
+"Selected multilib: .;@m64"
+------------------------------------------------------------------------------
+
+"Base Runtime Environment"
+503.bwaves_r
+507.cactuBSSN_r
+508.namd_r," No flags used"
+510.parest_r
+511.povray_r," No flags used"
+519.lbm_r," No flags used"
+521.wrf_r
+526.blender_r
+527.cam4_r
+538.imagick_r," No flags used"
+544.nab_r," No flags used"
+549.fotonik3d_r
+554.roms_r
+
+"Base Compiler Invocation"
+503.bwaves_r
+507.cactuBSSN_r
+508.namd_r," clang++"," clang++"
+510.parest_r
+511.povray_r," clang++"," clang"," clang++"
+519.lbm_r," clang"," clang"
+521.wrf_r
+526.blender_r
+527.cam4_r
+538.imagick_r," clang"," clang"
+544.nab_r," clang"," clang"
+549.fotonik3d_r
+554.roms_r
+
+"Base Portability Flags"
+503.bwaves_r
+507.cactuBSSN_r
+508.namd_r," -DSPEC_LP64"
+510.parest_r
+511.povray_r," -DSPEC_LP64"
+519.lbm_r," -DSPEC_LP64"
+521.wrf_r
+526.blender_r
+527.cam4_r
+538.imagick_r," -DSPEC_LP64"
+544.nab_r," -DSPEC_LP64"
+549.fotonik3d_r
+554.roms_r
+
+"Base Optimization Flags"
+503.bwaves_r
+507.cactuBSSN_r
+508.namd_r," -m64"," -m64"," -O3"," -mavx"," -z muldefs"
+510.parest_r
+511.povray_r," -m64"," -m64"," -m64"," -Ofast"," -mavx"," -O3"," -mavx"," -z muldefs"
+519.lbm_r," -m64"," -m64"," -Ofast"," -mavx"," -z muldefs"
+521.wrf_r
+526.blender_r
+527.cam4_r
+538.imagick_r," -m64"," -m64"," -Ofast"," -mavx"," -z muldefs"
+544.nab_r," -m64"," -m64"," -Ofast"," -mavx"," -z muldefs"
+549.fotonik3d_r
+554.roms_r
+
+"Base Other Flags"
+503.bwaves_r
+507.cactuBSSN_r
+508.namd_r," No flags used"
+510.parest_r
+511.povray_r," No flags used"
+519.lbm_r," No flags used"
+521.wrf_r
+526.blender_r
+527.cam4_r
+538.imagick_r," No flags used"
+544.nab_r," No flags used"
+549.fotonik3d_r
+554.roms_r
+
+"Base Forbidden Flags"
+503.bwaves_r
+507.cactuBSSN_r
+508.namd_r
+510.parest_r
+511.povray_r
+519.lbm_r
+521.wrf_r
+526.blender_r
+527.cam4_r
+538.imagick_r
+544.nab_r
+549.fotonik3d_r
+554.roms_r
+
+"Base Unknown Flags"
+503.bwaves_r
+507.cactuBSSN_r
+508.namd_r
+510.parest_r
+511.povray_r," -mllvm -enable-aa-eval -save-stats"," -mllvm -enable-aa-eval -save-stats"
+519.lbm_r," -mllvm -enable-aa-eval -save-stats"
+521.wrf_r
+526.blender_r
+527.cam4_r
+538.imagick_r," -mllvm -enable-aa-eval -save-stats"," -mllvm -enable-aa-eval -save-stats"
+544.nab_r," -mllvm -enable-aa-eval -save-stats"
+549.fotonik3d_r
+554.roms_r
+
+"Peak Runtime Environment"
+503.bwaves_r
+507.cactuBSSN_r
+508.namd_r
+510.parest_r
+511.povray_r
+519.lbm_r
+521.wrf_r
+526.blender_r
+527.cam4_r
+538.imagick_r
+544.nab_r
+549.fotonik3d_r
+554.roms_r
+
+"Peak Compiler Invocation"
+503.bwaves_r
+507.cactuBSSN_r
+508.namd_r
+510.parest_r
+511.povray_r
+519.lbm_r
+521.wrf_r
+526.blender_r
+527.cam4_r
+538.imagick_r
+544.nab_r
+549.fotonik3d_r
+554.roms_r
+
+"Peak Portability Flags"
+503.bwaves_r
+507.cactuBSSN_r
+508.namd_r
+510.parest_r
+511.povray_r
+519.lbm_r
+521.wrf_r
+526.blender_r
+527.cam4_r
+538.imagick_r
+544.nab_r
+549.fotonik3d_r
+554.roms_r
+
+"Peak Optimization Flags"
+503.bwaves_r
+507.cactuBSSN_r
+508.namd_r
+510.parest_r
+511.povray_r
+519.lbm_r
+521.wrf_r
+526.blender_r
+527.cam4_r
+538.imagick_r
+544.nab_r
+549.fotonik3d_r
+554.roms_r
+
+"Peak Other Flags"
+503.bwaves_r
+507.cactuBSSN_r
+508.namd_r
+510.parest_r
+511.povray_r
+519.lbm_r
+521.wrf_r
+526.blender_r
+527.cam4_r
+538.imagick_r
+544.nab_r
+549.fotonik3d_r
+554.roms_r
+
+"Peak Forbidden Flags"
+503.bwaves_r
+507.cactuBSSN_r
+508.namd_r
+510.parest_r
+511.povray_r
+519.lbm_r
+521.wrf_r
+526.blender_r
+527.cam4_r
+538.imagick_r
+544.nab_r
+549.fotonik3d_r
+554.roms_r
+
+"Peak Unknown Flags"
+503.bwaves_r
+507.cactuBSSN_r
+508.namd_r
+510.parest_r
+511.povray_r
+519.lbm_r
+521.wrf_r
+526.blender_r
+527.cam4_r
+538.imagick_r
+544.nab_r
+549.fotonik3d_r
+554.roms_r
+
+ERRORS
+
+##############################################################################
+"#   INVALID RUN INVALID RUN INVALID RUN INVALID RUN INVALID RUN INVALID RUN  #"
+"#                                                                            #"
+"# 'reportable' flag not set during run                                       #"
+"# 510.parest_r (base) did not have enough runs!                              #"
+"# 503.bwaves_r (base) did not have enough runs!                              #"
+"# 526.blender_r (base) did not have enough runs!                             #"
+"# 549.fotonik3d_r (base) did not have enough runs!                           #"
+"# 507.cactuBSSN_r (base) did not have enough runs!                           #"
+"# 554.roms_r (base) did not have enough runs!                                #"
+"# 527.cam4_r (base) did not have enough runs!                                #"
+"# 521.wrf_r (base) did not have enough runs!                                 #"
+"# 510.parest_r (base) had invalid runs!                                      #"
+"# 503.bwaves_r (base) had invalid runs!                                      #"
+"# 526.blender_r (base) had invalid runs!                                     #"
+"# 549.fotonik3d_r (base) had invalid runs!                                   #"
+"# 507.cactuBSSN_r (base) had invalid runs!                                   #"
+"# 554.roms_r (base) had invalid runs!                                        #"
+"# 527.cam4_r (base) had invalid runs!                                        #"
+"# 521.wrf_r (base) had invalid runs!                                         #"
+"# Run of 503.bwaves_r (base) was not valid; status is CE                     #"
+"# Run of 507.cactuBSSN_r (base) was not valid; status is CE                  #"
+"# Run of 510.parest_r (base) was not valid; status is CE                     #"
+"# Run of 521.wrf_r (base) was not valid; status is CE                        #"
+"# Run of 526.blender_r (base) was not valid; status is CE                    #"
+"# Run of 527.cam4_r (base) was not valid; status is CE                       #"
+"# Run of 549.fotonik3d_r (base) was not valid; status is CE                  #"
+"# Run of 554.roms_r (base) was not valid; status is CE                       #"
+"# Unknown flags were used! See                                               #"
+"#      https://www.spec.org/cpu2017/Docs/runcpu.html#flagsurl                #"
+"# for information about how to get rid of this error.                        #"
+"# Error 503.bwaves_r: Error with make!                                       #"
+"# Error 507.cactuBSSN_r: Error with make!                                    #"
+"# Error 510.parest_r: Error with make!                                       #"
+"# Error 521.wrf_r: Error with make!                                          #"
+"# Error 526.blender_r: Error with make!                                      #"
+"# Error 527.cam4_r: Error with make!                                         #"
+"# Error 549.fotonik3d_r: Error with make!                                    #"
+"# Error 554.roms_r: Error with make!                                         #"
+"#                                                                            #"
+"#   INVALID RUN INVALID RUN INVALID RUN INVALID RUN INVALID RUN INVALID RUN  #"
+##############################################################################
+----------------
+"For questions about","this result, please","contact the tester.",
+"For other inquiries,","please contact",info@spec.org.,
+"Copyright 2017-2020 Standard","Performance Evaluation",Corporation,
+"Tested with SPEC CPU2017",v1.0.5.
+"Result run on","2020-02-28 11:43:44+0000."
+"Report generated on","2020-02-28 13:02:00","by SPEC CPU2017 CSV","formatter v5178."

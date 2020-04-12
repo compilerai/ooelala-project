@@ -1,0 +1,441 @@
+valid,0
+
+"SPEC CPU2017 Integer Rate Result"
+
+"Full Results Table"
+
+Benchmark,"Base # Copies","Est. Base Run Time","Est. Base Rate","Base Selected","Base Status","Peak # Copies","Est. Peak Run Time","Est. Peak Rate","Peak Selected","Peak Status",Description
+500.perlbench_r,1,432.225961,3.683259,0,S,,,,,,"refrate(ref) iteration #1"
+500.perlbench_r,1,432.597058,3.680099,1,S,,,,,,"refrate(ref) iteration #2"
+502.gcc_r,1,320.698222,4.415366,0,S,,,,,,"refrate(ref) iteration #1"
+502.gcc_r,1,322.732327,4.387537,1,S,,,,,,"refrate(ref) iteration #2"
+505.mcf_r,1,490.683715,3.293364,0,S,,,,,,"refrate(ref) iteration #1"
+505.mcf_r,1,492.107263,3.283837,1,S,,,,,,"refrate(ref) iteration #2"
+520.omnetpp_r,1,577.824302,2.270586,0,S,,,,,,"refrate(ref) iteration #1"
+520.omnetpp_r,1,583.226125,2.249556,1,S,,,,,,"refrate(ref) iteration #2"
+523.xalancbmk_r,1,504.056782,2.095002,1,S,,,,,,"refrate(ref) iteration #1"
+523.xalancbmk_r,1,503.240682,2.0984,0,S,,,,,,"refrate(ref) iteration #2"
+525.x264_r,1,338.704751,5.169694,1,S,,,,,,"refrate(ref) iteration #1"
+525.x264_r,1,336.175272,5.208592,0,S,,,,,,"refrate(ref) iteration #2"
+531.deepsjeng_r,1,371.767471,3.082572,1,S,,,,,,"refrate(ref) iteration #1"
+531.deepsjeng_r,1,371.381615,3.085775,0,S,,,,,,"refrate(ref) iteration #2"
+541.leela_r,1,575.191784,2.87904,0,S,,,,,,"refrate(ref) iteration #1"
+541.leela_r,1,575.27683,2.878614,1,S,,,,,,"refrate(ref) iteration #2"
+548.exchange2_r,1,--,--,0,CE,,,,,,"refrate(ref) iteration #1"
+548.exchange2_r,,,,,,,,,,,"refrate(ref) iteration #2"
+557.xz_r,1,481.719632,2.241968,1,S,,,,,,"refrate(ref) iteration #1"
+557.xz_r,1,481.406711,2.243425,0,S,,,,,,"refrate(ref) iteration #2"
+
+"Selected Results Table"
+
+Benchmark,"Base # Copies","Est. Base Run Time","Est. Base Rate","Base Selected","Base Status","Peak # Copies","Est. Peak Run Time","Est. Peak Rate","Peak Selected","Peak Status",Description
+500.perlbench_r,1,432.597058,3.680099,1,S,,,,,NR,"SelectedIteration (base #2; peak NR)"
+502.gcc_r,1,322.732327,4.387537,1,S,,,,,NR,"SelectedIteration (base #2; peak NR)"
+505.mcf_r,1,492.107263,3.283837,1,S,,,,,NR,"SelectedIteration (base #2; peak NR)"
+520.omnetpp_r,1,583.226125,2.249556,1,S,,,,,NR,"SelectedIteration (base #2; peak NR)"
+523.xalancbmk_r,1,504.056782,2.095002,1,S,,,,,NR,"SelectedIteration (base #1; peak NR)"
+525.x264_r,1,338.704751,5.169694,1,S,,,,,NR,"SelectedIteration (base #1; peak NR)"
+531.deepsjeng_r,1,371.767471,3.082572,1,S,,,,,NR,"SelectedIteration (base #1; peak NR)"
+541.leela_r,1,575.27683,2.878614,1,S,,,,,NR,"SelectedIteration (base #2; peak NR)"
+548.exchange2_r,,,,,NR,,,,,NR
+557.xz_r,1,481.719632,2.241968,1,S,,,,,NR,"SelectedIteration (base #1; peak NR)"
+
+SPECrate2017_int_base,3.090243,,3.090243
+SPECrate2017_int_peak,"Not Run",,,,,,,"Not Run"
+
+"Run number:",011.0
+"runcpu command:","/opt/spec/bin/harness/runcpu --configfile clang --action run --tune base --copies 1 --iterations 2 --noreportable --nopower --runmode rate --tune base --size refrate intrate"
+"output root:","not used"
+
+"Hardware Vendor:","My Corporation"
+"Hardware Model:",
+"Date tested:",Feb-2020
+"CPU2017 License:","nnn (Your SPEC license number)"
+"Test sponsor:","My Corporation"
+"Tested by:","My Corporation"
+"Hardware avail:",
+"Software avail:",
+
+
+HARDWARE
+
+"CPU Name","Intel Xeon E5-2676 v3"
+"  Max MHz."," "
+"  Nominal"," "
+Enabled," cores, 1 chip,  threads/core"
+Orderable," "
+"Cache L1"," "
+"  L2"," "
+"  L3"," "
+"  Other"," "
+Memory,"31.420 GB fixme: If using DDR4, the format is:"
+,"'N GB (N x N GB nRxn PC4-nnnnX-X)'"
+Storage,"497 GB  add more disk info here"
+Other," "
+
+SOFTWARE
+
+OS,"Ubuntu 16.04.6 LTS"
+,4.4.0-1101-aws
+Compiler,"C/C++: Version 8.0.0 of Clang, the"
+,"LLVM Compiler Infrastructure"
+,"Fortran: Version 4.8.2 of GCC, the"
+,"GNU Compiler Collection"
+,"DragonEgg: Version 3.5.2, the"
+,"LLVM Compiler Infrastructure"
+Parallel,No
+Firmware," "
+"File System",ext4
+"System State","Run level 5 (add definition here)"
+"Base Pointers",64-bit
+"Peak Pointers","Not Applicable"
+Other," "
+
+"Submit Notes"
+
+"The config file option 'submit' was used."
+
+"General Notes"
+
+"Environment variables set by runcpu before the start of the run:"
+"LD_LIBRARY_PATH = ""/opt/llvm/build/lib"""
+"LIBRARY_PATH = ""/opt/llvm/build/lib"""
+"PATH = ""/opt/llvm/build/bin:/opt/spec/bin:/home/ankush/bin:/home/ankush/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/intel/bin"""
+
+
+"Platform Notes"
+
+" Sysinfo program /opt/spec/bin/sysinfo"
+" Rev: r5974 of 2018-05-19 9bcde8f2999c33d61f64985e45859ea9"
+" running on ip-172-31-9-72 Fri Feb 28 07:09:06 2020"
+
+" SUT (System Under Test) info as seen by some common utilities."
+" For more information on this section, see"
+"    https://www.spec.org/cpu2017/Docs/config.html#sysinfo"
+
+" From /proc/cpuinfo"
+"    model name : Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz"
+"       1  ""physical id""s (chips)"
+"       8 ""processors"""
+"    cores, siblings (Caution: counting these is hw and system dependent. The following"
+"    excerpts from /proc/cpuinfo might not be reliable.  Use with caution.)"
+"       cpu cores : 8"
+"       siblings  : 8"
+"       physical 0: cores 0 1 2 3 4 5 6 7"
+
+" From lscpu:"
+"      Architecture:          x86_64"
+"      CPU op-mode(s):        32-bit, 64-bit"
+"      Byte Order:            Little Endian"
+"      CPU(s):                8"
+"      On-line CPU(s) list:   0-7"
+"      Thread(s) per core:    1"
+"      Core(s) per socket:    8"
+"      Socket(s):             1"
+"      NUMA node(s):          1"
+"      Vendor ID:             GenuineIntel"
+"      CPU family:            6"
+"      Model:                 63"
+"      Model name:            Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz"
+"      Stepping:              2"
+"      CPU MHz:               2400.054"
+"      BogoMIPS:              4800.10"
+"      Hypervisor vendor:     Xen"
+"      Virtualization type:   full"
+"      L1d cache:             32K"
+"      L1i cache:             32K"
+"      L2 cache:              256K"
+"      L3 cache:              30720K"
+"      NUMA node0 CPU(s):     0-7"
+"      Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov"
+"      pat pse36 clflush mmx fxsr sse sse2 ht syscall nx pdpe1gb rdtscp lm constant_tsc"
+"      rep_good nopl xtopology pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe"
+"      popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm"
+"      invpcid_single kaiser fsgsbase bmi1 avx2 smep bmi2 erms invpcid xsaveopt"
+
+" /proc/cpuinfo cache data"
+"    cache size : 30720 KB"
+
+" From numactl --hardware  WARNING: a numactl 'node' might or might not correspond to a"
+" physical chip."
+"   available: 1 nodes (0)"
+"   node 0 cpus: 0 1 2 3 4 5 6 7"
+"   node 0 size: 32174 MB"
+"   node 0 free: 15918 MB"
+"   node distances:"
+"   node   0"
+"     0:  10"
+
+" From /proc/meminfo"
+"    MemTotal:       32946352 kB"
+"    HugePages_Total:       0"
+"    Hugepagesize:       2048 kB"
+
+" /usr/bin/lsb_release -d"
+"    Ubuntu 16.04.6 LTS"
+
+" From /etc/*release* /etc/*version*"
+"    debian_version: stretch/sid"
+"    ec2_version: Ubuntu 16.04.6 LTS (Xenial Xerus)"
+"    os-release:"
+"       NAME=""Ubuntu"""
+"       VERSION=""16.04.6 LTS (Xenial Xerus)"""
+"       ID=ubuntu"
+"       ID_LIKE=debian"
+"       PRETTY_NAME=""Ubuntu 16.04.6 LTS"""
+"       VERSION_ID=""16.04"""
+"       HOME_URL=""http://www.ubuntu.com/"""
+"       SUPPORT_URL=""http://help.ubuntu.com/"""
+
+" uname -a:"
+"    Linux ip-172-31-9-72 4.4.0-1101-aws #112-Ubuntu SMP Thu Jan 9 11:27:02 UTC 2020 x86_64"
+"    x86_64 x86_64 GNU/Linux"
+
+" Kernel self-reported vulnerability status:"
+
+" CVE-2017-5754 (Meltdown):          Mitigation: PTI"
+" CVE-2017-5753 (Spectre variant 1): Mitigation: usercopy/swapgs barriers and __user"
+" pointer sanitization"
+" CVE-2017-5715 (Spectre variant 2): Mitigation: Full generic retpoline, IBPB: kernel-off,"
+" STIBP: disabled, RSB filling"
+
+" run-level 5 Feb 28 03:13"
+
+" SPEC is set to: /opt/spec"
+"    Filesystem     Type  Size  Used Avail Use% Mounted on"
+"    /dev/xvda1     ext4  497G   15G  482G   3% /"
+
+" Additional information from dmidecode follows.  WARNING: Use caution when you interpret"
+" this section. The 'dmidecode' program reads system data which is ""intended to allow"
+" hardware to be accurately determined"", but the intent may not be met, as there are"
+" frequent changes to hardware, firmware, and the ""DMTF SMBIOS"" standard."
+
+" (End of data from sysinfo program)"
+
+"Compiler Version Notes"
+
+==============================================================================
+" CC  500.perlbench_r(base) 502.gcc_r(base) 505.mcf_r(base) 525.x264_r(base)"
+"      557.xz_r(base)"
+------------------------------------------------------------------------------
+"clang version 8.0.0 (tags/RELEASE_800/final)"
+"Target: x86_64-unknown-linux-gnu"
+"Thread model: posix"
+"InstalledDir: /opt/llvm/build/bin"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5.4.0"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/6"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/6.0.0"
+"Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5.4.0"
+"Candidate multilib: .;@m64"
+"Selected multilib: .;@m64"
+------------------------------------------------------------------------------
+
+==============================================================================
+" CXXC 520.omnetpp_r(base) 523.xalancbmk_r(base) 531.deepsjeng_r(base)"
+"      541.leela_r(base)"
+------------------------------------------------------------------------------
+"clang version 8.0.0 (tags/RELEASE_800/final)"
+"Target: x86_64-unknown-linux-gnu"
+"Thread model: posix"
+"InstalledDir: /opt/llvm/build/bin"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5.4.0"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/6"
+"Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/6.0.0"
+"Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5.4.0"
+"Candidate multilib: .;@m64"
+"Selected multilib: .;@m64"
+------------------------------------------------------------------------------
+
+"Base Runtime Environment"
+500.perlbench_r," No flags used"
+502.gcc_r," No flags used"
+505.mcf_r," No flags used"
+520.omnetpp_r," No flags used"
+523.xalancbmk_r," No flags used"
+525.x264_r," No flags used"
+531.deepsjeng_r," No flags used"
+541.leela_r," No flags used"
+548.exchange2_r
+557.xz_r," No flags used"
+
+"Base Compiler Invocation"
+500.perlbench_r," clang"," clang"
+502.gcc_r," clang"," clang"
+505.mcf_r," clang"," clang"
+520.omnetpp_r," clang++"," clang++"
+523.xalancbmk_r," clang++"," clang++"
+525.x264_r," clang"," clang"
+531.deepsjeng_r," clang++"," clang++"
+541.leela_r," clang++"," clang++"
+548.exchange2_r
+557.xz_r," clang"," clang"
+
+"Base Portability Flags"
+500.perlbench_r," -DSPEC_LINUX_X64"," -DSPEC_LP64"
+502.gcc_r," -DSPEC_LP64"
+505.mcf_r," -DSPEC_LP64"
+520.omnetpp_r," -DSPEC_LP64"
+523.xalancbmk_r," -DSPEC_LINUX"," -DSPEC_LP64"
+525.x264_r," -DSPEC_LP64"
+531.deepsjeng_r," -DSPEC_LP64"
+541.leela_r," -DSPEC_LP64"
+548.exchange2_r
+557.xz_r," -DSPEC_LP64"
+
+"Base Optimization Flags"
+500.perlbench_r," -m64"," -m64"," -z muldefs"," -Ofast"," -mavx"," -z muldefs"
+502.gcc_r," -m64"," -m64"," -z muldefs"," -Ofast"," -mavx"," -z muldefs"
+505.mcf_r," -m64"," -m64"," -z muldefs"," -Ofast"," -mavx"," -z muldefs"
+520.omnetpp_r," -m64"," -m64"," -O3"," -mavx"," -z muldefs"
+523.xalancbmk_r," -m64"," -m64"," -O3"," -mavx"," -z muldefs"
+525.x264_r," -m64"," -m64"," -z muldefs"," -Ofast"," -mavx"," -z muldefs"
+531.deepsjeng_r," -m64"," -m64"," -O3"," -mavx"," -z muldefs"
+541.leela_r," -m64"," -m64"," -O3"," -mavx"," -z muldefs"
+548.exchange2_r
+557.xz_r," -m64"," -m64"," -z muldefs"," -Ofast"," -mavx"," -z muldefs"
+
+"Base Other Flags"
+500.perlbench_r," No flags used"
+502.gcc_r," No flags used"
+505.mcf_r," No flags used"
+520.omnetpp_r," No flags used"
+523.xalancbmk_r," No flags used"
+525.x264_r," No flags used"
+531.deepsjeng_r," No flags used"
+541.leela_r," No flags used"
+548.exchange2_r
+557.xz_r," No flags used"
+
+"Base Forbidden Flags"
+500.perlbench_r
+502.gcc_r
+505.mcf_r
+520.omnetpp_r
+523.xalancbmk_r
+525.x264_r
+531.deepsjeng_r
+541.leela_r
+548.exchange2_r
+557.xz_r
+
+"Base Unknown Flags"
+500.perlbench_r," -mllvm -enable-aa-eval -save-stats"
+502.gcc_r," -mllvm -enable-aa-eval -save-stats"
+505.mcf_r," -mllvm -enable-aa-eval -save-stats"
+520.omnetpp_r
+523.xalancbmk_r
+525.x264_r," -mllvm -enable-aa-eval -save-stats"," -mllvm -enable-aa-eval -save-stats"," -mllvm -enable-aa-eval -save-stats"
+531.deepsjeng_r
+541.leela_r
+548.exchange2_r
+557.xz_r," -mllvm -enable-aa-eval -save-stats"
+
+"Peak Runtime Environment"
+500.perlbench_r
+502.gcc_r
+505.mcf_r
+520.omnetpp_r
+523.xalancbmk_r
+525.x264_r
+531.deepsjeng_r
+541.leela_r
+548.exchange2_r
+557.xz_r
+
+"Peak Compiler Invocation"
+500.perlbench_r
+502.gcc_r
+505.mcf_r
+520.omnetpp_r
+523.xalancbmk_r
+525.x264_r
+531.deepsjeng_r
+541.leela_r
+548.exchange2_r
+557.xz_r
+
+"Peak Portability Flags"
+500.perlbench_r
+502.gcc_r
+505.mcf_r
+520.omnetpp_r
+523.xalancbmk_r
+525.x264_r
+531.deepsjeng_r
+541.leela_r
+548.exchange2_r
+557.xz_r
+
+"Peak Optimization Flags"
+500.perlbench_r
+502.gcc_r
+505.mcf_r
+520.omnetpp_r
+523.xalancbmk_r
+525.x264_r
+531.deepsjeng_r
+541.leela_r
+548.exchange2_r
+557.xz_r
+
+"Peak Other Flags"
+500.perlbench_r
+502.gcc_r
+505.mcf_r
+520.omnetpp_r
+523.xalancbmk_r
+525.x264_r
+531.deepsjeng_r
+541.leela_r
+548.exchange2_r
+557.xz_r
+
+"Peak Forbidden Flags"
+500.perlbench_r
+502.gcc_r
+505.mcf_r
+520.omnetpp_r
+523.xalancbmk_r
+525.x264_r
+531.deepsjeng_r
+541.leela_r
+548.exchange2_r
+557.xz_r
+
+"Peak Unknown Flags"
+500.perlbench_r
+502.gcc_r
+505.mcf_r
+520.omnetpp_r
+523.xalancbmk_r
+525.x264_r
+531.deepsjeng_r
+541.leela_r
+548.exchange2_r
+557.xz_r
+
+ERRORS
+
+##############################################################################
+"#   INVALID RUN INVALID RUN INVALID RUN INVALID RUN INVALID RUN INVALID RUN  #"
+"#                                                                            #"
+"# 'reportable' flag not set during run                                       #"
+"# 548.exchange2_r (base) did not have enough runs!                           #"
+"# 548.exchange2_r (base) had invalid runs!                                   #"
+"# Run of 548.exchange2_r (base) was not valid; status is CE                  #"
+"# Unknown flags were used! See                                               #"
+"#      https://www.spec.org/cpu2017/Docs/runcpu.html#flagsurl                #"
+"# for information about how to get rid of this error.                        #"
+"# Error 548.exchange2_r: Error with make!                                    #"
+"#                                                                            #"
+"#   INVALID RUN INVALID RUN INVALID RUN INVALID RUN INVALID RUN INVALID RUN  #"
+##############################################################################
+----------------
+"For questions about","this result, please","contact the tester.",
+"For other inquiries,","please contact",info@spec.org.,
+"Copyright 2017-2020 Standard","Performance Evaluation",Corporation,
+"Tested with SPEC CPU2017",v1.0.5.
+"Result run on","2020-02-28 07:09:05+0000."
+"Report generated on","2020-02-28 09:27:18","by SPEC CPU2017 CSV","formatter v5178."

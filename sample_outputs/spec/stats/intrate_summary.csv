@@ -1,0 +1,7 @@
+Benchmark,# unique final preds,# useful preds,# preds w/ calls,# initial preds,# final preds,# initial full exprs unseq. s.e,additional partial-alias responses,additional must-not-alias responses,additional may-alias responses,additional must-alias responses,Increase in additional may-alias responses(%),Increase in additional must-alias responses(%),Increase in additional must-not-alias responses(%),Increase in additional partial-alias responses(%),Total AA Queries,Total AA Queries w/ Unseq
+502.gcc_r,5894,1268,205,86950,12427,30125,149,101861,309357,12389,-5.660000000000001,55.910000000000004,377.9659999999996,9.126999999999999,350327603.0,350751359.0
+525.x264_r,6537,1412,164,6999,11059,1458,38,6749,62094,43,64.971,35.232,40.93,65.517,24560719.0,24629643.0
+500.perlbench_r,5451,972,501,7169,10616,3768,-225,6352,612206,-13,1.3130000000000008,-2.559,26.413999999999994,-7.027000000000001,142571360.0,143189680.0
+557.xz_r,383,56,0,778,524,505,0,2452,614,106,202.102,512.6940000000001,221.638,0.0,571844.0,575016.0
+505.mcf_r,26,4,4,74,90,62,0,0,0,0,0.0,0.0,0.0,0.0,865124.0,865124.0
+999.specrand_ir,1,0,0,1,1,1,0,0,0,0,0.0,0.0,0.0,0.0,317.0,317.0

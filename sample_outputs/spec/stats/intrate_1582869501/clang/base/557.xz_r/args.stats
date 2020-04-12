@@ -1,0 +1,10 @@
+{
+	"assembler.EmittedAlignFragments": 1,
+	"assembler.EmittedDataFragments": 4,
+	"assembler.EmittedFragments": 5,
+	"assembler.FragmentLayouts": 6,
+	"assembler.ObjectBytes": 1016,
+	"assembler.RelaxationSteps": 1,
+	"cgscc-passmgr.MaxSCCIterations": 1,
+	"globalopt.NumUnnamed": 5
+}

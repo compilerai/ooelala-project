@@ -1,0 +1,10 @@
+Benchmark,# unique final preds,# useful preds,# preds w/ calls,# initial preds,# final preds,# initial full exprs unseq. s.e,additional partial-alias responses,additional must-not-alias responses,additional may-alias responses,additional must-alias responses,Increase in additional may-alias responses(%),Increase in additional must-alias responses(%),Increase in additional must-not-alias responses(%),Increase in additional partial-alias responses(%),Total AA Queries,Total AA Queries w/ Unseq
+538.imagick_r,1685,164,430,3453,6627,2585,123,960,25556,362,4.332,10.61,1.5809999999999997,14.909,279025022.0,279052023.0
+526.blender_r,1862,794,215,6653,3127,2820,0,134,-134,0,-0.6930000000000002,0.0,1.7759999999999991,0.0,41345191.0,41345191.0
+544.nab_r,183,57,7,292,596,124,0,93,-93,0,-0.186,0.0,2.491,0.0,1733875.0,1733875.0
+507.cactuBSSN_r,411,126,7,677,738,448,0,62,-62,0,-0.176,0.0,2.6449999999999996,0.0,8613907.0,8613907.0
+511.povray_r,55,16,0,59,134,14,0,12,-12,0,-0.029,0.0,0.027,0.0,893441.0,893441.0
+521.wrf_r,187,9,44,441,1160,231,0,1,-1,0,-0.125,0.0,0.33,0.0,1092525.0,1092525.0
+519.lbm_r,36,36,0,36,36,36,0,0,0,0,0.0,0.0,0.0,0.0,22154.0,22154.0
+527.cam4_r,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,98.0,98.0
+997.specrand_fr,1,0,0,1,1,1,0,0,0,0,0.0,0.0,0.0,0.0,317.0,317.0

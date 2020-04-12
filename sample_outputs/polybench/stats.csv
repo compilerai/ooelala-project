@@ -1,0 +1,7 @@
+Filename,# unique final preds,# useful preds,# preds w/ calls,# initial preds,# final preds,# initial full exprs unseq. s.e,additional partial-alias responses,additional must-not-alias responses,additional may-alias responses,additional must-alias responses,Benchmark,Increase in additional may-alias responses(%),Increase in additional must-alias responses(%),Increase in additional must-not-alias responses(%),Increase in additional partial-alias responses(%),Total AA Queries,Total AA Queries w/ Unseq
+gemm-unseq.stats,0,0,0,49,0,5,0,117,-124,7,,-6.432,17.5,9.443,0.0,3210.0,3210.0
+trisolv-unseq.stats,50,12,0,54,198,6,0,67,167,0,,16.469,0.0,7.298,0.0,1956.0,2190.0
+bicg-unseq.stats,118,30,0,122,236,5,0,48,150,0,,12.469,0.0,3.964,0.0,2440.0,2638.0
+gesummv-unseq.stats,126,30,0,130,252,5,0,44,133,0,,14.394,0.0,4.139,0.0,2013.0,2190.0
+atax-unseq.stats,26,6,0,30,91,6,0,7,-7,0,,-0.326,0.0,0.591,0.0,3363.0,3363.0
+jacobi-1d-unseq.stats,22,6,0,26,44,6,-12,-140,-751,-12,,-20.792,-24.49,-10.542,-44.444,5016.0,4101.0
