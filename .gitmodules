@@ -1,9 +1,8 @@
-[submodule "llvm"]
-	path = llvm
-	url = https://github.com/llvm-mirror/llvm
-[submodule "polly"]
-	path = polly
-	url = https://github.com/llvm-mirror/polly
-[submodule "clang"]
-	path = clang
-	url = https://github.com/llvm-mirror/clang
+[submodule "ooelala-src"]
+	path = ooelala/src
+	url = https://github.com/vaibhavbhagee/llvm-8.0.0
+	branch = ooelala-patches
+[submodule "ooelala-ubsan"]
+	path = ooelala/ubsan
+	url = https://github.com/vaibhavbhagee/llvm-8.0.0
+	branch = ubs-patches
