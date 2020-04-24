@@ -1,6 +1,6 @@
 This README described the structure of this artifact, which contains the implementation for the algorithm described in the paper, *OOElala: Order-of-Evaluation Based Alias Analysis for Compiler Optimization*, accepted at PLDI 2020.
 
-##Description of the artifact
+## Description of the artifact
 
 This artifact directory is structured into the following subdirectories, each of which is described subsequently:
 
