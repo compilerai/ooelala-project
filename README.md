@@ -175,7 +175,7 @@ This subsection outlines the steps to be followed to generate the optimisation a
 
 ### Generating performance numbers
 
-In this subsection, we outline the set of steps to be followed to run SPEC for both Clang and OOElala. These steps will generate the statistics presented in Table 6 of the paper.
+In this subsection, we outline the set of steps to be followed to run SPEC for both Clang and OOElala. These steps will generate the statistics presented in Table 6 of the paper. During the experimentation by the authors, they had run into issues related to DVFS (Dynamic Voltage and Frequency Scaling). Thus it might be beneficial to run SPEC on a machine which has DVFS disabled. To disable DVFS on ubuntu, please follow [this](https://askubuntu.com/questions/523640/how-i-can-disable-cpu-frequency-scaling-and-set-the-system-to-performance) link.
 
 * Chdir to `/opt/spec` and run `./runSpec.sh` to run SPEC for both intrate and fprate suites, for 3 iterations
 	* The script can be modified to run only intrate or fprate suites
