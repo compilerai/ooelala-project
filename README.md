@@ -241,3 +241,31 @@ This is used to infer that `q[i]`, `A[i][j]` or `r[k]` have a (pair-wise) must-n
 * Two folders are generated inside `<output_dir>` - one for clang statistics, one for clang-unseq (ooelala)
 * Run `python ./scripts/compareStats.py <output_dir>/clang <output_dir>/clang-unseq --csv <stats>`
 * This generates `<stats>.csv` which contains the difference of various aliasing statistics between clang and clang-unseq
+
+### Compiling a single benchmark
+
+* Chdir to `<artifact-home>/polybench` directory
+  ```
+  cd /home/$USER/ooelala-project/polybench
+  ```
+* Run the following make command to compile a single benchmark with the specified compiler other than `ooelala`
+  ```
+  make selected_benchmarks/<benchmark>/<benchmark> COMP=<compiler_command>
+  ```
+  Here, `COMP = /opt/llvm/build/bin/clang`, by default. To change the compiler, `COMP` can be changed to `COMP = gcc` or `COMP = icc`.
+* Run the following make command to compile a single benchmark with the `ooelala` 
+  ```
+  make selected_benchmarks/<benchmark>/<benchmark>-unseq
+  ```
+
+### Running a single benchmark
+
+* Chdir to `<artifact-home>/polybench` directory
+  ```
+  cd /home/$USER/ooelala-project/polybench
+  ```
+* Run the following command to run a single benchmark
+  ```
+  ./scripts/timeBenchmark.sh <compiler-name> selected_benchmarks/<benchmark> <number of runs>
+  ```
+  Here `<compiler-name>` can be gcc, icc, clang or clang-unseq (for ooelala)
