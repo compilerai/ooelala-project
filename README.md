@@ -27,8 +27,6 @@ This artifact directory is structured into the following subdirectories, each of
 	* *scripts* - This subdirectory contains the scripts used to build and run the Polybench benchmarks to obtain the speedups listed in Table 4 of the paper. Comparisons between various compilers have been drawn.
 	* *selected_benchmarks* - This represents the selected subset of benchmarks which we have annotated with custom `RESTRICT` macro predicates (corresponding to `CANT_ALIAS` used in the paper), used to provide the additional aliasing information, but in no way modifying the behaviour of the program
 
-* *requirements.sh* - This script performs installation of gcc, g++, python, pip and pandas as listed in the prerequisites described above. The Intel C Compiler (icc) and the SPEC CPU 2017 benchmarks have already been installed on the VM instance, using the appropriate educational license. 
-
 * *CANT_ALIAS.md* - This is a tutorial which discusses the *CANT_ALIAS* predicate described in the paper. It outlines the use of the macro and the subtleties associated with that.
 
 ## Setting up the tool
@@ -52,7 +50,7 @@ In this section, we provide detailed instructions related to installation of the
 		* Extract the parallel studio from the tar file and change to that directory
 		* Run `./install.sh`
 		* Only selecting the C++ compiler in the components to install should suffice, to run the litmus tests and the benchmarks
-	* Update the path of the environment, to reflect the icc installation
+	* Update the path of the environment, to reflect the icc installation. You can add the following statement to the `bashrc` file as well.
 	  ```
 	  $ export PATH=$PATH:<path-to-folder-containing-icc-executable>
 	  ```
