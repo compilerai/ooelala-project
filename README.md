@@ -77,7 +77,7 @@ In this section, we provide detailed instructions related to installation of the
   $ sudo chown -R $USER /opt/llvm/build
   $ cd /opt/llvm/build
   $ cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE="Release" -DCLANG_BUILD_EXAMPLES=1 -DCMAKE_CXX_FLAGS="-Wno-shift-count-overflow -Wno-redundant-move -Wno-init-list-lifetime" -DLLVM_ENABLE_ASSERTIONS=On /home/$USER/ooelala-project/ooelala/src/src
-  $ make -j2
+  $ make -j4
   ```
 * Building the UB Sanitizer 
   ```
@@ -85,7 +85,7 @@ In this section, we provide detailed instructions related to installation of the
   $ sudo chown -R $USER /opt/llvm/ubsan
   $ cd /opt/llvm/ubsan
   $ cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE="Release" -DCLANG_BUILD_EXAMPLES=1 -DCMAKE_CXX_FLAGS="-Wno-shift-count-overflow -Wno-redundant-move -Wno-init-list-lifetime" -DLLVM_ENABLE_ASSERTIONS=On /home/$USER/ooelala-project/ooelala/ubsan/src
-  $ make -j2
+  $ make -j4
   ```
 * The `make` command can be run using more number of jobs. However, if any errors are encountered during the build, the command should be re-run with a smaller number of jobs.
 
