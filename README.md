@@ -1,11 +1,11 @@
-This README described the structure of this artifact, which contains the implementation for the algorithm described in the paper, *OOElala: Order-of-Evaluation Based Alias Analysis for Compiler Optimization*, accepted at PLDI 2020.
+This README describes this artifact, which contains the implementation for the algorithm described in the paper, *OOElala: Order-of-Evaluation Based Alias Analysis for Compiler Optimization*, accepted at PLDI 2020.
 
 ## Terminology
 
 * We use `OOElala`, `ooelala` and `clang-unseq` interchangeably to refer to the tool/binary which we have implemented and produced as a part of this work. 
 * `<artifact-home>` refers to `/home/$USER/ooelala-project`
 
-## Description of the artifact
+## Structure of the artifact
 
 This artifact directory is structured into the following subdirectories, each of which is described subsequently:
 
@@ -26,6 +26,10 @@ This artifact directory is structured into the following subdirectories, each of
 	* *common* - This subdirectory contains the Polybench header file which needs to be included in the benchmarks.
 	* *scripts* - This subdirectory contains the scripts used to build and run the Polybench benchmarks to obtain the speedups listed in Table 4 of the paper. Comparisons between various compilers have been drawn.
 	* *selected_benchmarks* - This represents the selected subset of benchmarks which we have annotated with custom `RESTRICT` macro predicates (corresponding to `CANT_ALIAS` used in the paper), used to provide the additional aliasing information, but in no way modifying the behaviour of the program
+
+* *sample_outputs* - This directory contains a set of sample outputs which are obtained on running the SPEC CPU 2017 and the polybench benchmarks. These can be used by the developers to verify the output format
+	* *spec* - This contains the results and stats obtained for a sample run of SPEC CPU 2017, with clang and clang-unseq
+	* *polybench* - This contains the results and stats obtained for a sample run of Polybench, with clang and clang-unseq
 
 * *CANT_ALIAS.md* - This is a tutorial which discusses the *CANT_ALIAS* predicate described in the paper. It outlines the use of the macro and the subtleties associated with that.
 
