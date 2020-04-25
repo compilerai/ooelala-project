@@ -85,3 +85,28 @@ In this section, we provide detailed instructions related to installation of the
   $ cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE="Release" -DCLANG_BUILD_EXAMPLES=1 -DCMAKE_CXX_FLAGS="-Wno-shift-count-overflow -Wno-redundant-move -Wno-init-list-lifetime" -DLLVM_ENABLE_ASSERTIONS=On /home/$USER/ooelala-project/ooelala/ubsan
   $ make -j2
   ```
+
+## Running the Litmus Tests
+
+As described above, the litmus tests correspond to the two examples introduced in section 1.1 of the paper. The litmus tests can be found in the `litmus_tests` sub directory of the `<artifact-home>` directory.
+
+* **Example 1:** Calculating the index of the minimum and maximum element of an array
+	* The first example is the `array_min_max` example which has been described in detail, in section 1.1 of the paper. 
+	* In order to run this example, follow the steps: 
+	  ```
+	  $ cd /home/$USER/ooelala-project/litmus_tests
+	  $ make array_min_max-test
+	  ```
+	* This will compile the source code of the array_min_max example, which is present in `<artifact_home>/litmus_tests/array_min_max/`, with gcc, icc, clang and OOElala. 
+	* It reports the time taken to compile and generate the binary using each of the above mentioned compilers and also, the time taken by the binary to run the code.
+
+* **Example 2:** Kernel matrix initialization
+	* The second example is the `nested_loop example`. This example has been created by extracting out the kernel matrix initialization code which has been discussed in the example on the right hand side, in section 1.1. 
+	* This example, simplifies the kernel initialization code, in a way that it is now initialising a 2D array, called X, using a nested loop, while summing up the rows of X in another array called W. We observe that the optimisation opportunity using OOE non determinism, remains the same, as outlined in the explanation in section 1.1. 
+	* In order to run and benchmark the nested_loop example code, follow the steps:
+	  ```
+	  $ cd /home/$USER/ooelala-project/litmus_tests
+	  $ make nested_loop-test
+	  ```
+	* This will compile the source code of the nested_loop example, which is present in `<artifact-home>/litmus_tests/nested_loop/`, with gcc, icc, clang and OOElala.
+	* It reports the time taken to compile and generate the binary using each of the above mentioned compilers and also, the time taken by the binary to run the code.
