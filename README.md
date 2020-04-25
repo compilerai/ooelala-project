@@ -25,3 +25,58 @@ This artifact directory is structured into the following subdirectories, each of
 * *requirements.sh* - This script performs installation of gcc, g++, python, pip and pandas as listed in the prerequisites described above. The Intel C Compiler (icc) and the SPEC CPU 2017 benchmarks have already been installed on the VM instance, using the appropriate educational license. 
 
 * *CANT_ALIAS.md* - This is a tutorial which discusses the *CANT_ALIAS* predicate described in the paper. It outlines the use of the macro and the subtleties associated with that.
+
+## Setting up the tool
+
+In this section, we provide detailed instructions related to installation of the pre-requisites and setting up the benchmarks as well as the OOElala code and binaries:
+
+* Installation of g++, gcc, cmake
+  ```
+  $ sudo apt install build-essential g++
+  $ sudo apt install cmake
+  ```
+* Installation of python, pip and pandas, required for the post processing scripts in python
+  ```
+  $ sudo apt install python python-pip
+  $ sudo pip install --upgrade pip
+  $ sudo pip install pandas
+  ```
+* Installation of icc
+	* Download and Install the Intel Parallel Studio by following the instructions given [here](https://software.intel.com/en-us/download/parallel-studio-xe-2020-install-guide-linux).
+	* Run the Intel Parallel Studio as follows:
+		* Extract the parallel studio from the tar file and change to that directory
+		* Run `./install.sh`
+		* Only selecting the C++ compiler in the components to install should suffice, to run the litmus tests and the benchmarks
+	* Update the path of the environment, to reflect the icc installation
+	  ```
+	  $ export PATH=$PATH:<path-to-folder-containing-icc-executable>
+	  ```
+* Installation of the SPEC 2017 benchmark suite
+	* Obtain the iso for SPEC 2017 CPU benchmarks from [here](https://www.spec.org/order.html)
+	* Create the SPEC installation directory
+	  ```
+	  $ sudo mkdir -p /opt/spec
+	  $ sudo chown -R $USER /opt/spec
+	  ```
+	* Install the SPEC 2017 CPU benchmarks as per the instructions given [here](https://www.spec.org/cpu2017/Docs/install-guide-unix.html) in `/opt/spec`
+* Installation of numactl, to run the SPEC CPU 2017 benchmarks
+  ```
+  sudo apt install numactl
+  ```
+* Place the contents of this artifact inside `/home/$USER` so that `/home/$USER/ooelala-project/` exists.
+* Building the OOElala source code
+  ```
+  $ sudo mkdir -p /opt/llvm/build
+  $ sudo chown -R $USER /opt/llvm/build
+  $ cd /opt/llvm/build
+  $ cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE="Release" -DCLANG_BUILD_EXAMPLES=1 -DCMAKE_CXX_FLAGS="-Wno-shift-count-overflow -Wno-redundant-move -Wno-init-list-lifetime" -DLLVM_ENABLE_ASSERTIONS=On /home/$USER/ooelala-project/ooelala/src
+  $ make -j2
+  ```
+* Building the UB Sanitizer 
+  ```
+  $ sudo mkdir -p /opt/llvm/ubsan
+  $ sudo chown -R $USER /opt/llvm/ubsan
+  $ cd /opt/llvm/ubsan
+  $ cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE="Release" -DCLANG_BUILD_EXAMPLES=1 -DCMAKE_CXX_FLAGS="-Wno-shift-count-overflow -Wno-redundant-move -Wno-init-list-lifetime" -DLLVM_ENABLE_ASSERTIONS=On /home/$USER/ooelala-project/ooelala/ubsan
+  $ make -j2
+  ```
