@@ -2,7 +2,7 @@ This README described the structure of this artifact, which contains the impleme
 
 ## Terminology
 
-* We use `OOELala`, `ooelala` and `clang-unseq` interchangeably to refer to the tool/binary which we have implemented and produced as a part of this work. 
+* We use `OOElala`, `ooelala` and `clang-unseq` interchangeably to refer to the tool/binary which we have implemented and produced as a part of this work. 
 * `<artifact-home>` refers to `/home/$USER/ooelala-project`
 
 ## Description of the artifact
@@ -110,3 +110,87 @@ As described above, the litmus tests correspond to the two examples introduced i
 	  ```
 	* This will compile the source code of the nested_loop example, which is present in `<artifact-home>/litmus_tests/nested_loop/`, with gcc, icc, clang and OOElala.
 	* It reports the time taken to compile and generate the binary using each of the above mentioned compilers and also, the time taken by the binary to run the code.
+
+## Running the SPEC CPU 2017 benchmarks
+
+In section 4.2.2 of the paper, we have discussed building the SPEC CPU 2017 benchmarks using OOElala and obtaining the statistics related to the optimisations which are introduced due to the OOE non determinism. In this section, we will discuss the steps needed to be followed to run the SPEC benchmarks with OOElala and how to obtain the results. Note that, as per [this](https://www.spec.org/cpu2017/Docs/overview.html#benchmarks) documentation, the SPEC benchmarks are organised into 4 suites - intrate, intspeed, fprate and fpspeed. We analyse and benchmark OOELala on 2 out of these 4 suites namely intrate and fprate. Even from the 2 suites selected, we work with the C only benchmarks as the current scope of our analysis and implementation of OOElala is limited to C only. This gives us a set of 8 benchmarks, against which we benchmark the performance of the code compiled using OOElala and collect the optimisation related stats in the process. 
+
+These 8 benchmarks are - 500.perlbench_r, 502.gcc_r, 505.mcf_r, 525.x264_r, 557.xz_r in the intrate suite and 519.lbm_r, 538.imagick_r, 544.nab_r in the fprate suite. 
+
+### Generating Optimisation and Aliasing related Statistics
+
+This subsection outlines the steps to be followed to generate the optimisation and aliasing related statistics after running SPEC with both Clang and OOELala. These steps will generate the statistics present in Table 5 of the paper. Using the makefiles associated with the SPEC benchmarks, the interested readers and developers can also take a look at per source file LLVM IR changes that helped us identify the patterns reported in Figure 2 of the paper.
+
+* Change to the SPEC CPU 2017 installation directory
+  ```
+  $ cd /opt/spec/
+  ```
+* Copy the config files from `/home/$USER/ooelala-project/configs/` to `/opt/spec/configs`
+  ```
+  $ sudo cp /home/$USER/ooelala-project/spec/configs/clang.cfg /opt/spec/config
+  $ sudo cp /home/$USER/ooelala-project/spec/configs/clang-unseq.cfg /opt/spec/config
+  $ sudo cp /home/$USER/ooelala-project/spec/configs/clang-ubsan.cfg /opt/spec/config
+  $ sudo cp /home/$USER/ooelala-project/spec/configs/clang-unseq-ubsan.cfg /opt/spec/config
+  ```
+* Copy utility scripts from `/home/$USER/ooelala-project/scripts/` to `/opt/spec/`
+  ```
+  $ sudo cp /home/$USER/ooelala-project/spec/scripts/buildSPEC.sh /opt/spec
+  $ sudo cp /home/$USER/ooelala-project/spec/scripts/buildUBS.sh /opt/spec
+  $ sudo cp /home/$USER/ooelala-project/spec/scripts/runSPEC.sh /opt/spec
+  $ sudo cp /home/$USER/ooelala-project/spec/scripts/runUBS.sh /opt/spec
+  $ sudo cp /home/$USER/ooelala-project/spec/scripts/moveStats.sh /opt/spec
+  $ sudo cp /home/$USER/ooelala-project/spec/scripts/compareStats.py /opt/spec
+  $ sudo cp /home/$USER/ooelala-project/spec/scripts/combineResults.sh /opt/spec
+  ```
+* Chdir to `/opt/spec` and run `./buildSPEC.sh`
+  ```
+  $ cd /opt/spec
+  $ ./buildSPEC.sh
+  ```
+* The compile-time statistics per source file after the SPEC build will be generated in the directories `/opt/spec/intrate_<timestamp>/` and `/opt/spec/fprate_<timestamp>/` respectively
+* Copy `compareStats.py` from `/home/$USER/ooelala-project/spec/scripts/` to `/opt/spec/`
+  ```
+  $ sudo cp /home/$USER/ooelala-project/spec/scripts/compareStats.py /opt/spec/
+  ```
+* Run the following commands to get alias stats comparison for the `intrate` suite
+  ```
+  $ cd /opt/spec
+  $ python compareStats.py intrate_<timestamp>/clang intrate_<timestamp>/clang-unseq --csv intrate
+  ```
+* Run the following commands to get alias stats comparison for the `fprate` suite
+  ```
+  $ cd /opt/spec
+  $ python compareStats.py intrate_<timestamp>/clang intrate_<timestamp>/clang-unseq --csv fprate
+  ```
+
+### Generating performance numbers
+
+In this subsection, we outline the set of steps to be followed to run SPEC for both Clang and OOElala. These steps will generate the statistics presented in Table 6 of the paper.
+
+* Chdir to `/opt/spec` and run `./runSpec.sh` to run SPEC for both intrate and fprate suites, for 3 iterations
+	* The script can be modified to run only intrate or fprate suites
+	* The number of iteration can be increased or decreased
+	
+	**NOTE:** This step is the most time consuming step.
+
+* The results are generated in the directory `/opt/spec/result` as inside the most recent `csv` files
+	* `csv` file contains the times, scores, system specifications etc.
+	* As per [this](https://www.spec.org/cpu2017/Docs/overview.html#metrics) documentation, the different scores are combined using the Geometric Mean, which is reported as the overall metric. 
+	* In our case, we report the combined metric as the Geometric mean of the 8 C only benchmarks that we consider.
+
+* To select the 8 C only benchmarks from intrate and fprate, we use the `combineResults.sh` script. It outputs a table with the time and score for each benchmark, as well as the combined score for all of them. 
+* Run `./combineResults.sh <intrate results>.csv <fprate results>.csv <no. of iterations> <output file>`
+  ```
+  $ ./combineResults.sh result/CPU2017.<run no. 1>.intrate.refrate.csv result/CPU2017.<run no. 2>.fprate.refrate.csv 3 clang_comb.csv
+  $ ./combineResults.sh result/CPU2017.<run no. 3>.intrate.refrate.csv result/CPU2017.<run no. 4>.fprate.refrate.csv 3 ooelala_comb.csv
+  ```
+
+### Running the UB Sanitizer
+
+In order to build SPEC benchmarks with OOElala, with UBSAN checks enabled, we should follow the above steps and use `buildUBS.sh` and `runUBS.sh` instead of `buildSPEC.sh` and `runSPEC.sh`. This will compile the SPEC benchmarks with OOELala, with UB Sanitizer checks enabled and no optimisation passes and the the generated binaries respectively.
+
+**NOTE:** In case SPEC is built this way, then we will see no change in the alias statistics as we disable the `AliasAnalysisEvaluator` pass due to the fact that we don’t run any optimisation passes in this case. Also, this run will be slower than the SPEC runs without the UB Sanitizer as the unoptimised code with the UB Sanitizer checks is run, instead of optimised code. Running without errors is a confirmation that there are no bugs generated due to our predicates on the reference inputs.
+
+### Building individual SPEC benchmarks or inspecting the generated LLVM IR
+
+In order to build individual SPEC benchmarks or generate LLVM IR at a per source file level, the reviewers can use the makefiles present in `/home/$USER/ooelala-project/spec/makefiles/`. The instructions for the same can be found in `/home/$USER/ooelala-project/spec/makefiles/Readme.md`. This can help the reviewers to generate the LLVM IR using both Clang and OOElala, for those files which contain the patterns listed in Figure 2 and compare the IR generated to see the additional optimisations performed by OOElala.
