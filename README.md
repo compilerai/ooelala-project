@@ -204,3 +204,42 @@ In order to build SPEC benchmarks with OOElala, with UBSAN checks enabled, we sh
 ### Building individual SPEC benchmarks or inspecting the generated LLVM IR
 
 In order to build individual SPEC benchmarks or generate LLVM IR at a per source file level, the reviewers can use the makefiles present in `/home/$USER/ooelala-project/spec/makefiles/`. The instructions for the same can be found in `/home/$USER/ooelala-project/spec/makefiles/Readme.md`. This can help the reviewers to generate the LLVM IR using both Clang and OOElala, for those files which contain the patterns listed in Figure 2 and compare the IR generated to see the additional optimisations performed by OOElala.
+
+## Running Polybench benchmarks
+
+In section 4.2.1 of the paper, we have discussed a few benchmarks drawn from the Polybench benchmark suite, which were manually annotated to introduce unsequenced side-effects to allow OOElala to infer additional aliasing information. An example annotation is:
+```
+#define CANT_ALIAS(a, b, c) ((a = a) + (b = b) + (c = c))
+…
+CANT_ALIAS(q[i], A[i][j], r[k]);
+…
+```
+This is used to infer that `q[i]`, `A[i][j]` or `r[k]` have a (pair-wise) must-not-alias relationship. Note, that this statement is effectively a no-op, and will be removed by the DCE pass (along with by `-ffmath` in case the values are floats). This can be confirmed by generating the optimised llvm-IR with clang. We have annotated and tested 6 of the polybench benchmarks. These include various linear algebra kernels and operators. The modified programs can be found in the `polybench/selected_benchmarks` directory. 
+
+### Running all the benchmarks
+
+* Chdir to `<artifact-home>/polybench` directory
+  ```
+  cd /home/$USER/ooelala-project/polybench
+  ```
+* Run the script to compare times for clang, clang-unseq, icc and gcc for all benchmarks
+  ```
+  ./scripts/getAllResults.sh
+  ```
+  This will generate `results.csv` with the column `clang-unseq vs clang (x)` being used as Table 4 in the paper.
+
+* Those who are interested in further investigation can run the following command for finer control over the results generation:
+  ```
+  python scripts/compareTimes.py selected_benchmarks --runs <number of runs> --csv <results>
+  ```
+
+### Compiling all the benchmarks with clang/ooelala and getting alias stats
+
+* Chdir to `<artifact-home>/polybench` directory
+  ```
+  cd /home/$USER/ooelala-project/polybench
+  ```
+* Run `./scripts/getStats.sh <output_dir>`
+* Two folders are generated inside `<output_dir>` - one for clang statistics, one for clang-unseq (ooelala)
+* Run `python ./scripts/compareStats.py <output_dir>/clang <output_dir>/clang-unseq --csv <stats>`
+* This generates `<stats>.csv` which contains the difference of various aliasing statistics between clang and clang-unseq
