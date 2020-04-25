@@ -115,7 +115,17 @@ As described above, the litmus tests correspond to the two examples introduced i
 
 In section 4.2.2 of the paper, we have discussed building the SPEC CPU 2017 benchmarks using OOElala and obtaining the statistics related to the optimisations which are introduced due to the OOE non determinism. In this section, we will discuss the steps needed to be followed to run the SPEC benchmarks with OOElala and how to obtain the results. Note that, as per [this](https://www.spec.org/cpu2017/Docs/overview.html#benchmarks) documentation, the SPEC benchmarks are organised into 4 suites - intrate, intspeed, fprate and fpspeed. We analyse and benchmark OOELala on 2 out of these 4 suites namely intrate and fprate. Even from the 2 suites selected, we work with the C only benchmarks as the current scope of our analysis and implementation of OOElala is limited to C only. This gives us a set of 8 benchmarks, against which we benchmark the performance of the code compiled using OOElala and collect the optimisation related stats in the process. 
 
-These 8 benchmarks are - 500.perlbench_r, 502.gcc_r, 505.mcf_r, 525.x264_r, 557.xz_r in the intrate suite and 519.lbm_r, 538.imagick_r, 544.nab_r in the fprate suite. 
+These 8 benchmarks are:
+* Intrate suite
+	* 500.perlbench_r
+	* 502.gcc_r
+	* 505.mcf_r
+	* 525.x264_r
+	* 557.xz_r
+* Fprate suite 
+	* 519.lbm_r
+	* 538.imagick_r
+	* 544.nab_r
 
 ### Generating Optimisation and Aliasing related Statistics
 
