@@ -1,4 +1,6 @@
-This README describes this artifact, which contains the implementation for the algorithm described in the paper, *OOElala: Order-of-Evaluation Based Alias Analysis for Compiler Optimization*, accepted at PLDI 2020.
+This README describes this artifact, which contains the implementation for the algorithm described in the paper, *OOElala: Order-of-Evaluation Based Alias Analysis for Compiler Optimization*, accepted at PLDI 2020. 
+
+Link to the publication: [OOElala: Order-of-Evaluation based Alias Analysis for Compiler Optimization](https://raw.githubusercontent.com/compilerai/compilerai-publications/master/ooelala.pdf)
 
 ## Terminology
 
@@ -58,6 +60,11 @@ In this section, we provide detailed instructions related to installation of the
 	  ```
 	  $ export PATH=$PATH:<path-to-folder-containing-icc-executable>
 	  ```
+* Clone the `ooelala-project` repository
+  ```
+  $ cd /home/$USER/
+  $ git clone --recurse-submodules https://github.com/compilerai/ooelala-project.git
+  ```
 * Installation of the SPEC 2017 benchmark suite
 	* Obtain the iso for SPEC 2017 CPU benchmarks from [here](https://www.spec.org/order.html)
 	* Create the SPEC installation directory
