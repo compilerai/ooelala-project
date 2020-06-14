@@ -1,8 +1,8 @@
 [submodule "ooelala-src"]
 	path = ooelala/src
-	url = https://github.com/vaibhavbhagee/llvm-8.0.0
-	branch = ooelala-patches
+	url = https://github.com/compilerai/ooelala-patches
+	branch = master
 [submodule "ooelala-ubsan"]
 	path = ooelala/ubsan
-	url = https://github.com/vaibhavbhagee/llvm-8.0.0
-	branch = ubs-patches
+	url = https://github.com/compilerai/ooelala-ubsan-patches
+	branch = master
